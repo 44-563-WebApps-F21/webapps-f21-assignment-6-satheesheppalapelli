@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Hidden things
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Hidden things by Satheesh Eppalapelli</h1>
+    <h2>Getting Input</h2>
+
+    <form>
+        <label for="secret_phase">Enter the Secret Phase</label>
+        <input class="form-control" type="password" id="secret_phase" name="pass" value="Let me in">
+        <br>
+        <label for="check_phase">Enter a Phase </label>
+        <input class="form-control" type="text" id="check_phase" name="secret">
+        <br>
+        <input class="btn btn-primary" type="button" onclick="processPhase()" value="Check the phrase">
+    </form>
+
+    <script>
+        var correct = 0;
+        var wrong = 0;
+        var currentImage = 0;
+
+        function processPhase() {
+            console.log("Getting form values")
+            secret = document.getElementById("secret_phase").value
+            guess = document.getElementById("check_phase").value
+            out = document.getElementById("result")
+            if (secret == guess) {
+                correct = correct + 1;
+                alert("Access allowed");
+                out.innerHTML = correct
+            } else {
+                wrong = wrong + 1;
+                alert("Access denied");
+                out.innerHTML = wrong
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
