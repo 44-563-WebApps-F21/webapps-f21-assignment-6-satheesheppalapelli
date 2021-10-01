@@ -36,9 +36,9 @@
         function processPhase() {
             console.log("Getting form values")
             secret = document.getElementById("secret_phase").value
-            guess = document.getElementById("check_phase").value
+            check = document.getElementById("check_phase").value
             out = document.getElementById("result")
-            if (secret == guess) {
+            if (secret == check) {
                 correct = correct + 1;
                 alert("Access allowed");
                 out.innerHTML = correct
