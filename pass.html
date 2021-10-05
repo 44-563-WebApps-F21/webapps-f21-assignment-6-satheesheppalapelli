@@ -3,6 +3,12 @@
 
 <head>
     <title>Pass Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -20,6 +26,26 @@
     </form>
     <br>
     <p id="result">This text will be replaced </p>
+    <br>
+    <form>
+        <label for="secret_phrase">Enter the Secret Phrase</label>
+        <input class="form-control" type="password" id="secret_phrase" name="pass" value="Let me in"> <br>
+
+        <label for="check_phrase">Enter a Phrase</label>
+        <input class="form-control" type="text" id="check_phrase" name="Phrase"> <br>
+
+        <input class="btn btn-primary" type="button" onclick="processPhrase()" value="Check the Phrase">
+    </form>
+    <br>
+    <p id="results"> Result Correct or Wrong </p>
+    <br>
+
+    <div class="container">
+        <b><i>
+                <h3> Animals Image</h3>
+        </b></i>
+        <img src="elephant.jpg" onClick="newImage()" id="imgClickAndChange" alt="Elephant" width="200" height="200">
+    </div>
 
     <script type="text/javascript">
         var usingImage = 0;
@@ -34,6 +60,48 @@
                 out.innerHTML = "Values were confirmed"
             } else {
                 out.innerHTML = "Values were not confirmed"
+            }
+        }
+
+        var correct = 0;
+        var wrong = 0;
+
+        function processPhrase() {
+
+            console.log("Getting form values")
+            secret = document.getElementById("secret_phrase").value
+            check = document.getElementById("check_phrase").value
+            out = document.getElementById("results")
+            if (secret == check) {
+                correct = correct + 1;
+                alert("Access allowed");
+                out.innerHTML = correct
+            } else {
+                wrong = wrong + 1;
+                alert("Access denied");
+                out.innerHTML = wrong
+            }
+            out.innerHTML = "Correct " + correct + " Wrong " + wrong
+        }
+
+        var usingImage = 1;
+        function newImage() {
+
+            switch (usingImage) {
+                case 0:
+                    document.getElementById("imgClickAndChange").src = "elephant.jpg";
+                    usingImage = 1;
+                    break;
+                case 1:
+                    document.getElementById("imgClickAndChange").src = "peacock.jpg";
+                    usingImage = 2;
+                    break;
+                case 2:
+                    document.getElementById("imgClickAndChange").src = "pigeon.jpg";
+                    usingImage = 0;
+                    break;
+                default:
+                    document.getElementById("imgClickAndChange").src = "elephant.jpg";
             }
         }
 
