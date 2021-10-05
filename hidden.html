@@ -19,38 +19,69 @@
     <h2>Getting Input</h2>
 
     <form>
-        <label for="secret_phase">Enter the Secret word</label>
-        <input class="form-control" type="password" id="secret_phase" name="pass" value="Secret"> <br>
+        <label for="secret_phrase">Enter the Secret Phrase</label>
+        <input class="form-control" type="password" id="secret_phrase" name="pass" value="Let me in"> <br>
 
-        <label for="check_phase">Enter a guess </label>
-        <input class="form-control" type="text" id="check_phase" name="secret"> <br>
+        <label for="check_phrase">Enter a Phrase</label>
+        <input class="form-control" type="text" id="check_phrase" name="Phrase"> <br>
 
-        <input class="btn btn-primary" type="button" onclick="processPhase()" value="Check the guess">
+        <input class="btn btn-primary" type="button" onclick="processPhrase()" value="Check the Phrase">
     </form>
     <br>
-     <script>
+    <p id="results"> Result Correct or Wrong </p>
+    <br>
+
+    <div class="container">
+        <b><i>
+                <h3> Animals Image</h3>
+        </b></i>
+        <img src="elephant.jpg" onClick="newImage()" id="imgClickAndChange" alt="Elephant" width="200" height="200">
+    </div>
+
+    <script>
         var correct = 0;
         var wrong = 0;
-        var currentImage = 0;
 
-        function processPhase() {
+        function processPhrase() {
+
             console.log("Getting form values")
-            secret = document.getElementById("secret_phase").value
-            check = document.getElementById("check_phase").value
-            out = document.getElementById("result")
+            secret = document.getElementById("secret_phrase").value
+            check = document.getElementById("check_phrase").value
+            out = document.getElementById("results")
             if (secret == check) {
                 correct = correct + 1;
-                alert("Congratulations");
+                alert("Access allowed");
                 out.innerHTML = correct
             } else {
                 wrong = wrong + 1;
-                alert("Sorry");
+                alert("Access denied");
                 out.innerHTML = wrong
             }
             out.innerHTML = "Correct " + correct + " Wrong " + wrong
         }
+
+        var usingImage = 1;
+        function newImage() {
+
+            switch (usingImage) {
+                case 0:
+                    document.getElementById("imgClickAndChange").src = "elephant.jpg";
+                    usingImage = 1;
+                    break;
+                case 1:
+                    document.getElementById("imgClickAndChange").src = "peacock.jpg";
+                    usingImage = 2;
+                    break;
+                case 2:
+                    document.getElementById("imgClickAndChange").src = "pigeon.jpg";
+                    usingImage = 0;
+                    break;
+                default:
+                    document.getElementById("imgClickAndChange").src = "elephant.jpg";
+            }
+        }
     </script>
-    <p id="result"> Result Correct or Wrong </p>
+
 </body>
 
 </html>
