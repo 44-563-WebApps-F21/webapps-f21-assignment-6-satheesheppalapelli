@@ -14,39 +14,39 @@
 <body>
 
     <h3>Pass phrase by Satheesh Eppalapelli</h3>
-
-    <form>
-        <label for="form1_age">What is your age </label>
-        <input type="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30>
-        <br><br>
-        <label for="form1_nick">What is your nickname </label>
-        <input type="text" id="form1_nick" name="form1_nick" autofocus> <br>
+    <div>
+        <form>
+            <label for="form1_age">What is your age </label>
+            <input type="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30>
+            <br><br>
+            <label for="form1_nick">What is your nickname </label>
+            <input type="text" id="form1_nick" name="form1_nick" autofocus> <br>
+            <br>
+            <input class="btn btn-primary" type="button" onclick="resolveForm()" value="Get values form">
+        </form>
         <br>
-        <input class="btn btn-primary" type="button" onclick="resolveForm()" value="Get values form">
-    </form>
-    <br>
-    <p id="result">This Results will be replaced </p>
-    <br>
-    <form>
-        <label for="secret_phrase">Enter the Secret Phrase</label>
-        <input class="form-control" type="password" id="secret_phrase" name="pass" value="Let me in"> <br>
+        <p id="result">This Results will be replaced </p>
+        <br>
+        <form>
+            <label for="secret_phrase">Enter the Secret Phrase</label>
+            <input class="form-control" type="password" id="secret_phrase" name="pass" value="Let me in"> <br>
 
-        <label for="check_phrase">Enter a Phrase</label>
-        <input class="form-control" type="text" id="check_phrase" name="Phrase"> <br>
+            <label for="check_phrase">Enter a Phrase</label>
+            <input class="form-control" type="text" id="check_phrase" name="Phrase"> <br>
 
-        <input class="btn btn-primary" type="button" onclick="processPhrase()" value="Check the Phrase">
-    </form>
-    <br>
-    <p id="results"> Correct or Wrong results</p>
-    <br>
+            <input class="btn btn-primary" type="button" onclick="processPhrase()" value="Check the Phrase">
+        </form>
+        <br>
+        <p id="results"> Correct or Wrong results</p>
+        <br>
 
-    <div class="container">
-        <b><i>
-                <h3> Animals Image</h3>
-        </b></i>
-        <img src="elephant.jpg" onClick="newImage()" id="imgClickAndChange" alt="Elephant" width="200" height="200">
+        <div class="container">
+            <b><i>
+                    <h3> Animals Image</h3>
+            </b></i>
+            <img src="elephant.jpg" onClick="newImage()" id="imgClickAndChange" alt="Elephant" width="200" height="200">
+        </div>
     </div>
-
     <script type="text/javascript">
         var usingImage = 0;
         var correct = 0;

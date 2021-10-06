@@ -13,35 +13,35 @@
 
 <body>
     <h1>Satheesh Eppalapelli Computes</h1>
+    <div>
+        <form>
+            <label for="number_1">Enter a base </label>
+            <input type="number" id="number_1" name="base" value=10> <br>
 
-    <form>
-        <label for="number_1">Enter a base </label>
-        <input type="number" id="number_1" name="base" value=10> <br>
+            <label for="number_2">Enter an exponent </label>
+            <input type="number" id="number_2" name="exponent" value=2> <br>
 
-        <label for="number_2">Enter an exponent </label>
-        <input type="number" id="number_2" name="exponent" value=2> <br>
-
-        <input class="btn btn-primary" type="button" onclick="powers()" value="Compute">
+            <input class="btn btn-primary" type="button" onclick="powers()" value="Compute">
+            <br>
+        </form>
         <br>
-    </form>
-    <br>
-    <p id="power_results">This Results will be replaced </p>
-    <br>
+        <p id="power_results">This Results will be replaced </p>
+        <br>
 
-    <form>
-        <input type="radio" id="addition_radio" onclick="processRadio()" name="Workingonradio" value="plus">
-        <label for="addition_radio">+ </label>
-        <br>
-        <input type="radio" id="subtraction_radio" onclick="processRadio()" name="Workingonradio" value="minus">
-        <label for="subtraction_radio">- </label>
-        <br>
-        <input type="radio" id="multiplication_radio" onclick="processRadio()" name="Workingonradio" value="times">
-        <label for="multiplication_radio">* </label>
-        <br>
-        <input type="radio" id="division_radio" onclick="processRadio()" name="Workingonradio" value="divide">
-        <label for="division_radio">/ </label>
-    </form>
-
+        <form>
+            <input type="radio" id="addition_radio" onclick="processRadio()" name="Workingonradio" value="plus">
+            <label for="addition_radio">+ </label>
+            <br>
+            <input type="radio" id="subtraction_radio" onclick="processRadio()" name="Workingonradio" value="minus">
+            <label for="subtraction_radio">- </label>
+            <br>
+            <input type="radio" id="multiplication_radio" onclick="processRadio()" name="Workingonradio" value="times">
+            <label for="multiplication_radio">* </label>
+            <br>
+            <input type="radio" id="division_radio" onclick="processRadio()" name="Workingonradio" value="divide">
+            <label for="division_radio">/ </label>
+        </form>
+    </div>
     <div id="calculation_result"></div>
     <script>
 
@@ -69,7 +69,7 @@
             var secondinput = parseInt(document.getElementById("number_2").value);
 
             process = document.getElementById("calculation_result")
-        
+
             if (document.getElementById("addition_radio").checked) {
                 process.innerHTML = firstinput + secondinput;
             } else if (document.getElementById("subtraction_radio").checked) {
