@@ -17,32 +17,21 @@
 </head>
 
 <body>
-    <div style="padding: 10px;">
-        <h1>Satheesh Eppalapelli Orders a Car</h1>
+    <h1>Satheesh Eppalapelli Orders a Car</h1>
 
-        <form>
-            <input type="checkbox" id="Electric" name="Electric" value="Electric">
-            <b><i></i><label for="Electric">Electric</label></b></i>
-            </br>
-            <input type="checkbox" id="AC" name="AC" value="AC">
-            <b><i></i><label for="AC">AC</label></b></i>
-            </br>
-            <input type="checkbox" id="GPS" name="GPS" value="GPS">
-            <b><i></i><label for="GPS">GPS</label></b></i>
-            </br>
-            <input type="button" onclick="orderCar()" value="Order a car">
-        </form><br>
+    <form>
+        <input type="checkbox" id="Electric" name="Electric" value="Electric">
+        <b><i></i><label for="Electric">Electric</label></b></i>
+        </br>
+        <input type="checkbox" id="AC" name="AC" value="AC">
+        <b><i></i><label for="AC">AC</label></b></i>
+        </br>
+        <input type="checkbox" id="GPS" name="GPS" value="GPS">
+        <b><i></i><label for="GPS">GPS</label></b></i>
+        </br>
+        <input class="btn btn-primary" type="button" onclick="orderCar()" value="Order a car">
+    </form><br>
 
-        <form>
-            <b><i></i><label for="property_name">Enter a property </label></b></i>
-            <input type="text" id="property_name" name="property_name" value="color">
-            <br><br>
-            <b><i></i><label for="property_value">Enter a value </label></b></i>
-            <input type="text" id="property_value" name="property_value" value="blue">
-            <br><br>
-            <input type="button" onclick="updateCar()" value="Update the car">
-        </form>
-    </div>
     <div>
         <b><i>
                 <p id="result">This text will be replaced</p>
@@ -63,13 +52,6 @@
             my_car = JSON.parse(my_car)
         }
 
-        function updateCar() {
-            property_name = document.getElementById("property_name").value
-            property_value = document.getElementById("property_value").value
-            my_car[property_name] = property_value
-            document.getElementById("result").innerHTML = JSON.stringify(my_car)
-            my_car = JSON.parse(my_car)
-        }
     </script>
 
 </body>
