@@ -37,7 +37,7 @@
         <input class="btn btn-primary" type="button" onclick="processPhrase()" value="Check the Phrase">
     </form>
     <br>
-    <p id="results">  Correct or Wrong results</p>
+    <p id="results"> Correct or Wrong results</p>
     <br>
 
     <div class="container">
@@ -49,6 +49,9 @@
 
     <script type="text/javascript">
         var usingImage = 0;
+        var correct = 0;
+        var wrong = 0;
+
         function resolveForm() {
             console.log("Getting form values")
             age = document.getElementById("form1_age").value
@@ -61,9 +64,6 @@
                 out.innerHTML = "Values were not confirmed"
             }
         }
-
-        var correct = 0;
-        var wrong = 0;
 
         function processPhrase() {
 
@@ -79,6 +79,9 @@
                 wrong = wrong + 1;
                 alert("Access denied");
                 out.innerHTML = wrong
+                if (wrong >= 3) {
+                    lock()
+                }
             }
             out.innerHTML = "Correct " + correct + " Wrong " + wrong
         }
@@ -104,6 +107,10 @@
             }
         }
 
+        function lock() {
+            alert("Account Locked");
+            window.location = "pass.html";
+        }
     </script>
 
 </body>
