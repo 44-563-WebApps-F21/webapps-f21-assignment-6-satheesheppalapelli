@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Arithimetic Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <h1>Satheesh Eppalapelli Computes</h1>
+
+    <form>
+        <label for="base">Enter a base </label>
+        <input type="number" id="base" name="base" value=10> <br>
+
+        <label for="exponent">Enter an exponent </label>
+        <input type="number" id="exponent" name="exponent" value=2> <br>
+
+        <input type="button" onclick="powers()" value="Compute">
+        <br>
+    </form>
+    <br>
+    <p id="results">This Results will be replaced </p>
+    <br>
+    <script>
+
+        function powers() {
+
+            base = document.getElementById("base").value
+            exponent = document.getElementById("exponent").value
+            out = document.getElementById("results")
+            let results = "Powers of " + base + " are: "
+
+            var result = 1;
+            if (exponent == undefined)
+                exponent = 2
+
+            for (var i = 1; i <= exponent; i++) {
+                result = result * base;
+                results += result + " "
+            }
+            out.innerHTML = results
+        }
+    </script>
+
+</body>
+
+</html>

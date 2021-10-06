@@ -25,7 +25,7 @@
         <input type="button" onclick="resolveForm()" value="Get values form">
     </form>
     <br>
-    <p id="result">This text will be replaced </p>
+    <p id="result">This Results will be replaced </p>
     <br>
     <form>
         <label for="secret_phrase">Enter the Secret Phrase</label>
@@ -37,7 +37,7 @@
         <input class="btn btn-primary" type="button" onclick="processPhrase()" value="Check the Phrase">
     </form>
     <br>
-    <p id="results"> Result Correct or Wrong </p>
+    <p id="results">  Correct or Wrong results</p>
     <br>
 
     <div class="container">
@@ -54,7 +54,6 @@
             age = document.getElementById("form1_age").value
             nick = document.getElementById("form1_nick").value
             confirmed = confirm("Are these the values? " + age + " and " + nick)
-
             out = document.getElementById("result")
             if (confirmed) {
                 out.innerHTML = "Values were confirmed"
