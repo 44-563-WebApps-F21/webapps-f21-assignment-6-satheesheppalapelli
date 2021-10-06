@@ -31,7 +31,16 @@
         </br>
         <input class="btn btn-primary" type="button" onclick="orderCar()" value="Order a car">
     </form><br>
-
+    <form>
+        <b><i></i><label for="property_name">Enter a property </label></b></i>
+        <input type="text" id="property_name" name="property_name" value="color">
+        <br><br>
+        <b><i></i><label for="property_value">Enter a value </label></b></i>
+        <input type="text" id="property_value" name="property_value" value="blue">
+        <br><br>
+        <input class="btn btn-primary" type="button" onclick="updateCar()" value="Update the car">
+    </form>
+    
     <div>
         <b><i>
                 <p id="result">This text will be replaced</p>
@@ -52,6 +61,14 @@
             my_car = JSON.parse(my_car)
         }
 
+        
+       function updateCar() {
+            property_name = document.getElementById("property_name").value
+            property_value = document.getElementById("property_value").value
+            my_car[property_name] = property_value
+            document.getElementById("result").innerHTML = JSON.stringify(my_car)
+            my_car = JSON.parse(my_car)
+        }
     </script>
 
 </body>
