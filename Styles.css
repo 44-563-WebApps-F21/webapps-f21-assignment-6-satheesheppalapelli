@@ -14,3 +14,7 @@ div{
     background-color:lavender;
     text-align: center;
 }
+h3:hover{
+    background-color:orchid;
+    color:rgb(240, 227, 240);
+}
